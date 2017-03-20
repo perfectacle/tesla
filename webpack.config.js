@@ -92,7 +92,7 @@ module.exports = {
   },
   resolve: {
     modules: [
-      resolve('./app'),
+      resolve('./app/src'),
       resolve('./node_modules')
     ]
   },

@@ -35,7 +35,7 @@ if(isDev) {
 }
 
 // server-open
-app.use('/', express.static(__dirname + '/app/src'));
+app.use('/', express.static(`${__dirname}/app/${isDev ? 'src' : 'dist'}`));
 app.listen(port, () => {
   console.log('Express listening on port', port);
 });
@@ -45,5 +45,5 @@ app.use('/api', require('./routes/api'));
 
 // client router
 app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/app/src/index.html');
+  res.sendFile(`${__dirname}/app/${isDev ? 'src' : 'dist'}/`);
 });

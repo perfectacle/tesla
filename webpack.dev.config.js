@@ -85,7 +85,7 @@ module.exports = {
   },
   resolve: {
     modules: [
-      resolve('./app'),
+      resolve('./app/src'),
       resolve('./node_modules')
     ]
   },
@@ -97,7 +97,7 @@ module.exports = {
     historyApiFallback: true,
     contentBase: ROOT,
     proxy: {
-      '**': 'http://localhost:' + port.server,
+      '/api/**': 'http://localhost:' + port.server,
     },
     stats: {
       colors: true

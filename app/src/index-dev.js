@@ -1,21 +1,21 @@
 'use strict';
-import React, {Component} from 'react';
+import React from 'react';
 import {render} from 'react-dom';
 import AppContainer from 'react-hot-loader/lib/AppContainer';
-import {Routes} from './Routes-dev';
+import {RoutesDev} from './routes/RoutesDev';
 
 render(
   <AppContainer>
-    <Routes/>
+    <RoutesDev/>
   </AppContainer>,
   document.getElementById('app')
 );
 
 if (module.hot) {
-  module.hot.accept('./Routes-dev', () => {
+  module.hot.accept('./routes/RoutesDev', () => {
     render(
       <AppContainer>
-        <Routes/>
+        <RoutesDev/>
       </AppContainer>,
       document.getElementById('app')
     );

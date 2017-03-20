@@ -30,9 +30,8 @@ const asyncComponent = getComponent => (
   }
 );
 
-// 코드 스플리팅
-const Comp = asyncComponent(() => import('./components/Comp/Comp').then(module => module.default));
-const Comp2 = asyncComponent(() => import('./components/Comp2/Comp2').then(module => module.default));
+const Comp = asyncComponent(() => import('components/Comp/Comp').then(module => module.default));
+const Comp2 = asyncComponent(() => import('components/Comp2/Comp2').then(module => module.default));
 
 export const Routes = () => (
   <Router>
