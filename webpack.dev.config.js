@@ -21,7 +21,7 @@ module.exports = {
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
 
-    resolve(ROOT, 'index-dev')
+    resolve(ROOT, 'index')
     // the entry point of our app
   ],
   output: {
@@ -76,11 +76,11 @@ module.exports = {
       test: /\.html/,
       use: 'raw-loader'
     }, {
-      test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-      loader: 'file-loader?name=fonts/[name].[ext]'
+      test: /^favicon\.ico$/,
+      loader: 'file-loader?name=[name].[ext]'
     }, {
-      test: /\.(jp(e)g|gif|png)?$/,
-      use: 'file-loader?name=img/[name].[ext]'
+      test: /\.(jpg|gif|png|svg|ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+      loader: 'file-loader?name=media/[name].[ext]'
     }]
   },
   resolve: {

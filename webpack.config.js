@@ -43,7 +43,16 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: './app/src/index.html'
+      template: './app/src/index.html',
+      minify: {
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true
+      }
     })
   ],
   module: {
@@ -80,14 +89,11 @@ module.exports = {
         }
       ]
     }, {
-      test: /\.html/,
-      use: 'raw-loader'
+      test: /favicon.ico$/,
+      loader: 'file-loader?name=[name].[ext]'
     }, {
-      test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-      loader: 'file-loader?name=fonts/[name].[ext]'
-    }, {
-      test: /\.(jp(e)g|gif|png)?$/,
-      use: 'file-loader?name=img/[name].[ext]'
+      test: /\.(jpg|gif|png|svg|ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+      loader: 'file-loader?name=media/[name].[ext]'
     }]
   },
   resolve: {

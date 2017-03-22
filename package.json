@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js -d --config webpack.dev.config.js",
-    "dev2": "NODE_ENV=development node server",
+    "dev": "NODE_ENV=development node server",
     "start": "node server",
     "build": "rm -rf app/dist && node_modules/webpack/bin/webpack.js"
   },

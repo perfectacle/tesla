@@ -6,7 +6,7 @@ import Route from 'react-router-dom/es/Route';
 import Comp from 'components/Comp/Comp';
 import Comp2 from 'components/Comp2/Comp2';
 
-export const RoutesDev = () => (
+export const Routes = () => (
   <Router>
     <div>
       <Route exact path="/" component={Comp}/>
