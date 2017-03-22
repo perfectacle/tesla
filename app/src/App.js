@@ -3,7 +3,7 @@ import Component from 'react/lib/ReactComponent';
 import './App.css';
 
 import Header from './components/Header/Header';
-import TeslaBattery from './components/TeslaBattery/TeslaBattery';
+import TeslaBattery from './containers/TeslaBattery/TeslaBattery';
 
 const counterDefaultVal = {
   speed: {
