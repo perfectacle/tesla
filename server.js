@@ -35,7 +35,7 @@ if(isDev) {
 }
 
 // server-open
-app.use('/', express.static(`${__dirname}/app/${isDev ? 'src' : 'dist'}`));
+app.use('/', express.static(`${__dirname}/app/dist`));
 app.listen(port, () => {
   console.log('Express listening on port', port);
 });

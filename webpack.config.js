@@ -4,7 +4,6 @@ const {resolve} = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config = require('./config.json');
 const ROOT = './app/src';
 const DIST = './app/dist';
 
