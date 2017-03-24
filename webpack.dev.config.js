@@ -76,7 +76,6 @@ module.exports = {
     hot: true,
     inline: true,
     port: PORT,
-    headers: { 'Access-Control-Allow-Origin': '*' },
     contentBase: ROOT,
     stats: {
       colors: true
