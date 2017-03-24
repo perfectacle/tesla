@@ -4,7 +4,6 @@ const {resolve} = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config = require('./config.json');
 const ROOT = './app/src';
 const DIST = './app/dist';
 
@@ -75,20 +74,6 @@ module.exports = {
         }
       ]
     }, {
-      test: /\.scss$/,
-      loaders: ['style-loader', 'css-loader', 'sass-loader',
-        {
-          loader: 'postcss-loader',
-          options: {
-            plugins: () => [
-              autoprefixer({
-                browsers: ['last 2 versions', '> 10%', 'ie 9']
-              })
-            ]
-          }
-        }
-      ]
-    }, {
       test: /favicon.ico$/,
       loader: 'file-loader?name=[name].[ext]'
     }, {
@@ -98,7 +83,7 @@ module.exports = {
   },
   resolve: {
     modules: [
-      resolve('./app/src'),
+      resolve(ROOT),
       resolve('./node_modules')
     ]
   },

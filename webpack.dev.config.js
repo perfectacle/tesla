@@ -4,7 +4,7 @@ const {resolve} = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const {port} = require('./config.json');
+const PORT = 3001;
 const ROOT = './app/src';
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
     'react-hot-loader/patch',
     // activate HMR for React
 
-    `webpack-dev-server/client?http://localhost:${port.dev}`,
+    `webpack-dev-server/client?http://localhost:${PORT}`,
     // bundle the client for webpack-dev-server
     // and connect to the provided endpoint
 
@@ -36,7 +36,7 @@ module.exports = {
     // prints more readable module names in the browser console on HMR updates
 
     new HtmlWebpackPlugin({
-      template: './app/src/index.html'
+      template: `${ROOT}/index.html`
     })
   ],
   module: {
@@ -59,23 +59,6 @@ module.exports = {
         }
       ]
     }, {
-      test: /\.scss$/,
-      loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap',
-        {
-          loader: 'postcss-loader',
-          options: {
-            plugins: () => [
-              autoprefixer({
-                browsers: ['last 2 versions', '> 10%', 'ie 9']
-              })
-            ]
-          }
-        }
-      ]
-    }, {
-      test: /\.html/,
-      use: 'raw-loader'
-    }, {
       test: /favicon\.ico$/,
       loader: 'file-loader?name=[name].[ext]'
     }, {
@@ -85,20 +68,16 @@ module.exports = {
   },
   resolve: {
     modules: [
-      resolve('./app/src'),
+      resolve(ROOT),
       resolve('./node_modules')
     ]
   },
   devServer: {
     hot: true,
     inline: true,
-    port: port.dev,
+    port: PORT,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    historyApiFallback: true,
     contentBase: ROOT,
-    proxy: {
-      '/api/**': 'http://localhost:' + port.server,
-    },
     stats: {
       colors: true
     }
