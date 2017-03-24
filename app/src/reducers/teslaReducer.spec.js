@@ -1,4 +1,4 @@
-import Reducer from './tesla';
+import Reducer from './teslaReducer';
 
 describe('test reducer', () => {
   let initialState  = null;

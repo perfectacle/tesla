@@ -8,7 +8,7 @@ const {port} = require('./config.json');
 const ROOT = './app/src';
 
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
     // activate HMR for React
