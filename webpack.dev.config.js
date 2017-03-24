@@ -76,7 +76,7 @@ module.exports = {
       test: /\.html/,
       use: 'raw-loader'
     }, {
-      test: /^favicon\.ico$/,
+      test: /favicon.ico$/,
       loader: 'file-loader?name=[name].[ext]'
     }, {
       test: /\.(jpg|gif|png|svg|ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
