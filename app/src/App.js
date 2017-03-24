@@ -2,12 +2,16 @@ import React from 'react/lib/React';
 import Component from 'react/lib/ReactComponent';
 import './App.css';
 
-class App extends Component {
+import {Header} from './components/Header/Header';
+import TeslaBattery from './containers/TeslaBattery/TeslaBattery';
+
+export default class App extends Component {
   render() {
     return (
-      <h1>시작!</h1>
+      <div className="app">
+        <Header/>
+        <TeslaBattery/>
+      </div>
     );
   }
 }
-
-export default App;
