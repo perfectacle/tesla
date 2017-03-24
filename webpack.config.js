@@ -9,7 +9,7 @@ const DIST = './app/dist';
 
 module.exports = {
   entry: {
-    app: ROOT + '/index.js',
+    app: ROOT + '/index',
   },
   output: {
     filename: '[name].[chunkhash].js',
@@ -97,7 +97,7 @@ module.exports = {
   },
   resolve: {
     modules: [
-      resolve('./app/src'),
+      resolve(ROOT),
       resolve('./node_modules')
     ]
   },

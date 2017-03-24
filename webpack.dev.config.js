@@ -68,7 +68,7 @@ module.exports = {
   },
   resolve: {
     modules: [
-      resolve('./app/src'),
+      resolve(ROOT),
       resolve('./node_modules')
     ]
   },
@@ -76,8 +76,6 @@ module.exports = {
     hot: true,
     inline: true,
     port: PORT,
-    headers: { 'Access-Control-Allow-Origin': '*' },
-    historyApiFallback: true,
     contentBase: ROOT,
     stats: {
       colors: true
